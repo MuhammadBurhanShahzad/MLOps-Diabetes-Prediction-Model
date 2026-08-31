@@ -1,67 +1,76 @@
-# 🩺 Diabetes Prediction Model – Your First MLOps Project (FastAPI + Docker + K8s)
+# 🩺 Diabetes Prediction Model – Your First MLOps Project
+### 🚀 Scaling Machine Learning from Local Code to Kubernetes
 
-> 🎥 YouTube video for the project: **"Build Your First MLOps Project"**
+This project demonstrates a complete end-to-end MLOps pipeline. We transition from a raw dataset to a production-ready, scalable API deployed on a Kubernetes cluster, predicting diabetes based on health metrics.
 
-This project helps you learn **Building and Deploying an ML Model** using a simple and real-world use case: predicting whether a person is diabetic based on health metrics. We’ll go from:
+---
 
-- ✅ Model Training
-- ✅ Building the Model locally
-- ✅ API Deployment with FastAPI
-- ✅ Dockerization
-- ✅ Kubernetes Deployment
+## 🏗️ Project Architecture
+
+<!-- 
+  IMAGE PLACEHOLDER: 
+  Insert your generated diagram here. 
+  Example: <img src="architecture-diagram.png" width="800">
+-->
+**[ 🖼️ INSERT ARCHITECTURE DIAGRAM HERE ]**
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Machine Learning** | `Scikit-Learn`, `Random Forest` | Model Training & Evaluation |
+| **API Framework** | `FastAPI`, `Uvicorn` | High-performance Model Serving |
+| **Containerization** | `Docker` | Environment Isolation & Portability |
+| **Orchestration** | `Kubernetes (K8s)` | Scalability & Deployment Management |
+| **Environment** | `Python 3.x`, `Venv` | Development Ecosystem |
 
 ---
 
 ## 📊 Problem Statement
 
-Predict if a person is diabetic based on:
-- Pregnancies
-- Glucose
-- Blood Pressure
-- BMI
-- Age
+The goal is to predict whether a patient has diabetes based on several diagnostic measurements:
+- 🤰 **Pregnancies**: Number of times pregnant
+- 🩸 **Glucose**: Plasma glucose concentration
+- 🩺 **Blood Pressure**: Diastolic blood pressure (mm Hg)
+- ⚖️ **BMI**: Body mass index (weight in kg/(height in m)^2)
+- 📅 **Age**: Age in years
 
-We use a Random Forest Classifier trained on the **Pima Indians Diabetes Dataset**.
+**Dataset:** Pima Indians Diabetes Dataset.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
-### 1. Clone the Repo
-
+### 1. Environment Setup
 ```bash
+# Clone the repository
 git clone https://github.com/iam-veeramalla/first-mlops-project.git
 cd first-mlops-project
-```
 
-### 2. Create Virtual Environment
-
-```
+# Create and activate virtual environment
 python3 -m venv .mlops
-source .mlops/bin/activate
-```
+source .mlops/bin/activate  # On Windows use: .mlops\Scripts\activate
 
-### 3. Install Dependencies
-
-```
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-## Train the Model
-
-```
+### 2. Model Training
+Train the Random Forest model and generate the `.pkl` file:
+```bash
 python train.py
 ```
 
-## Run the API Locally
-
-```
+### 3. Local API Execution
+Launch the FastAPI server to test the model locally:
+```bash
 uvicorn main:app --reload
 ```
 
-### Sample Input for /predict
-
-```
+**Sample Request (`POST /predict`):**
+```json
 {
   "Pregnancies": 2,
   "Glucose": 130,
@@ -71,29 +80,28 @@ uvicorn main:app --reload
 }
 ```
 
-## Dockerize the API
+---
 
-### Build the Docker Image
+## 📦 Deployment Pipeline
 
-```
+### 🐳 Dockerization
+Package the API and model into a lightweight container:
+```bash
+# Build the image
 docker build -t diabetes-prediction-model .
-```
 
-### Run the Container
-
-```
+# Run the container
 docker run -p 8000:8000 diabetes-prediction-model
 ```
 
-## Deploy to Kubernetes
-
-```
+### ☸️ Kubernetes Orchestration
+Deploy the containerized application to a K8s cluster for high availability:
+```bash
 kubectl apply -f diabetes-prediction-model-deployment.yaml
 ```
 
-🙌 Credits
+---
 
+## 🙌 Credits
 Created by `ABHISHEK VEERAMALLA`
-
-Subscribe for more DevOps + MLOps content on the YouTube Channel - `Abhishek.Veeramalla`
-
+Check out more DevOps + MLOps content on the YouTube Channel: **Abhishek.Veeramalla**

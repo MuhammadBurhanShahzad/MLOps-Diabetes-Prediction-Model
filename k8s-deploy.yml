@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: diabetes-api
-        image: your-dockerhub-username/diabetes-api:latest
+        image: burhan107/diabetes-model-demo:v1
         ports:
         - containerPort: 8000
         imagePullPolicy: Always
