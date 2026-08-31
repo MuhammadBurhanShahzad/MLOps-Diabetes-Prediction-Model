@@ -13,7 +13,7 @@ This project demonstrates a complete end-to-end MLOps pipeline. We transition fr
   Example: <img src="architecture-diagram.png" width="800">
 -->
 
-img src="dig.jpg" width="800"
+<img src="dig.jpg" width="800">
 ---
 
 ## 🛠️ Tech Stack
