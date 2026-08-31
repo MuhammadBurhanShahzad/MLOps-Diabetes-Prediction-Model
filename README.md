@@ -12,8 +12,8 @@ This project demonstrates a complete end-to-end MLOps pipeline. We transition fr
   Insert your generated diagram here. 
   Example: <img src="architecture-diagram.png" width="800">
 -->
-**[ 🖼️ INSERT ARCHITECTURE DIAGRAM HERE ]**
 
+img src="dig.jpg" width="800"
 ---
 
 ## 🛠️ Tech Stack
